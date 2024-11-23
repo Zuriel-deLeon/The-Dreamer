@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to my Site!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue" rel="stylesheet">
+    <!-- Include Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+            LITTLE MISS DREAMER
+        </div>
+
+        <!-- Hamburger Icon for Mobile -->
+        <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle">
+        <label for="hamburger-toggle" class="hamburger">&#9776;</label>
+
+        <!-- Navigation Links -->
+        <ul id="nav-links">
+            <li><a href="#slide1"><i class="fas fa-home"></i> HOME</a></li>
+            <li><a href="#slide2"><i class="fas fa-lightbulb"></i> ABOUT ME</a></li>
+            <li><a href="#slide3"><i class="fas fa-file-alt"></i> RESUME</a></li>
+            <li><a href="#slide4"><i class="fas fa-briefcase"></i> SAMPLE WORKS</a></li>
+            <li><a href="#slide5"><i class="fas fa-book"></i> MY STORY</a></li>
+            <li><a href="#slide6"><i class="fas fa-phone-alt"></i> CONTACT ME</a></li>
+        </ul>
+    </nav>
+
+    <!-- Slides -->
+    <div class="container">
+        <section id="slide1" class="slides slide1">
+            <img src="IMAGES/gwen.jpg" alt="Profile Image" class="profile-image">
+            <h2>Hi! I am Zuriel de Leon</h2>
+            <h1>And I am a Little Miss Dreamer</h1>
+            <a href="#slide2">  <!-- Link the button to the second section -->
+                <button class="cta-button">Learn More</button>
+            </a>
+        </section>        
+        <section id="slide2" class="slides slide2">
+            <div class="content-container">
+                <div class="image-container">
+                    <img src="IMAGES/photo1.jpg" alt="About Me">
+                </div>
+                <div class="text-container">
+                    <h2>Get to Know Me!</h2>
+                    <p>
+                        I was your typical dreamer girl with a series of aspirations:
+                        first, to be a princess, then a musician, an athlete, a doctor,
+                        a singer, and a dancer. My mother supported every one of my ambitions,
+                        while my dad often scratched his head, wondering how much he’d need to
+                        spend on classes. Ultimately, out of all those dreams, art and film emerged
+                        as my true passion. So here I am: Zuriel de Leon, candidate number 1 from
+                        Cainta Rizal, 19 years old—your Little Miss Dreamer!
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="slide3" class="slides slide3">
+            <!-- Table Section -->
+            <table class="resume-table">
+                <tr>
+                    <td><strong>OBJECTIVE:</strong></td>
+                    <td>Aims to be a successful film director that will not only create detailed, high-quality outputs, but also serve as a role model for others, reminding people that multimedia artists are equally successful to others.</td>
+                </tr>
+                <tr>
+                    <td><strong>PROFESSIONAL SKILLS:</strong></td>
+                    <td>
+                        <ul>
+                            <li>Photography</li>
+                            <li>Videography</li>
+                            <li>Content Creation</li>
+                            <li>Director</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>WORK EXPERIENCE:</strong></td>
+                    <td>
+                        <ul>
+                            <li><strong>2022-2023:</strong></li>
+                            <ul>
+                                <li>Paskuhan sa Siete: Photographer</li>
+                                <li>Christmas Musical: Video Editor</li>
+                            </ul>
+                            <li><strong>Work Immersion Program:</strong></li>
+                            <ul>
+                                <li>Content Creation at "Royal Perfumes" for Promotion in Social Media</li>
+                            </ul>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        
+        <!-- Contact Me Section -->
+        <section id="contact" class="slides contact-section">
+            <h2>MESSAGE ME</h2>
+            <p>If you would like to reach out, feel free to contact me via email or phone:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:deleonzuriel1204@gmail.com">deleonzuriel1204@gmail.com</a></li>
+                <li><strong>Phone:</strong> <a href="tel:+639957216278">09957216278</a></li>
+            </ul>
+        </section>
+        
+        <section id="slide4" class="slides slide4">
+            <h2>My Sample Works</h2>
+            <div class="gallery">
+              <div class="gallery-item">
+                <img src="IMAGES/sample.jpg" alt="Image 1">
+              </div>
+              <div class="gallery-item">
+                <img src="IMAGES/sample2.jpg" alt="Image 2">
+              </div>
+              <div class="gallery-item">
+                <img src="IMAGES/sample3.jpg" alt="Image 3">
+              </div>
+              <div class="gallery-item">
+                <img src="IMAGES/sample4.jpg" alt="Image 4">
+              </div>
+              <div class="gallery-item">
+                <img src="IMAGES/sample5.jpg" alt="Image 5">
+              </div>
+            </div>
+          </section>
+          
+
+        <!-- Replacing Slide 5 with the Expanding Cards Section -->
+        <section id="slide5" class="slides slide5">
+            <div class="container2">
+                <div class="panel active" style="background-image: url(IMAGES/photo4.jpg);">
+                    <h1>I wanted to be a model when I was little. </h1>
+                </div>
+                <div class="panel" style="background-image: url(IMAGES/dance.jpg);">
+                    <h1>And then I told them I wanted to be a dancer.</h1>
+                </div>
+                <div class="panel" style="background-image: url(IMAGES/gym.jpg);">
+                    <h1>Then I tried sports that gave a lot of injuries so that's nice.</h1>
+                </div>
+                <div class="panel" style="background-image: url(IMAGES/last.jpg);">
+                    <h1>And then, suddenly I told my parents, I want to be an actress!</h1>
+                </div>
+                <div class="panel" style="background-image: url(IMAGES/profile.jpg);">
+                    <h1>And now, my future is set. I'm going to be a successful director!</h1>
+                </div>
+            </div>
+        </section>
+
+        <section id="slide6" class="slides slide6">
+            <h2 class="contact-heading">LET'S CHAT!</h2>  <!-- Positioned to the left -->
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </div>
+        </section>
+               
+</body>
+</html>

@@ -1,0 +1,696 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 20px 100px; 
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.logo {
+    font-size: 40px; 
+    color: #b50058; 
+    font-weight: bold;
+    padding-left: 20px;
+    flex: 1;
+}
+
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 20px; 
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #d5006d; 
+    font-size: 20px; 
+    padding: 12px 20px; 
+    position: relative; 
+    transition: color 0.3s ease; 
+}
+
+.navbar a:hover {
+    color: #ff3366; 
+}
+
+
+.navbar a i {
+    color: #f06292; 
+    font-size: 20px; 
+    margin-right: 8px; 
+}
+
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #ff3366; /* Pink line */
+    bottom: 0;
+    left: 50%;
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth animation */
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Scrollable Content */
+.container {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.slides {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: linear-gradient(454deg, #4f4080, #9553ff);
+    scroll-snap-align: start;
+    text-align: center;
+}
+
+.slides img {
+    width: 350px;
+}
+
+.slides h2 {
+    font-size: 70px;
+    font-weight: 600;
+    max-width: 650px;
+}
+
+/* Different Backgrounds for Each Slide */
+.slide1 {
+    background: linear-gradient(454deg, #6a4c93, #f35f89);
+}
+
+.slide2 {
+    background: linear-gradient(454deg, #f580a1, #af0850);
+}
+
+.slide3 {
+    background: linear-gradient(454deg, #f35f89, #f6d02f);
+}
+
+.slide4 {
+    background: linear-gradient(454deg, #351a5a, #b39ddb);
+}
+
+.slide5 {
+    background: linear-gradient(454deg, #f35f89, #7ec8e3);
+}
+
+.slide6 {
+    background: linear-gradient(454deg, #ff64a7, #f7c15e);
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none; /* Hide navigation links by default */
+        flex-direction: column;
+        align-items: flex-start; /* Align links to the left */
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    .navbar a {
+        padding: 15px;
+        font-size: 18px; /* Smaller font size for mobile */
+    }
+
+    /* Hamburger */
+    .hamburger {
+        display: block; /* Show hamburger icon on mobile */
+        margin-left: 10px;
+    }
+
+    /* When the checkbox is checked, show the dropdown below */
+    #hamburger-toggle:checked + .hamburger + ul {
+        display: flex; /* Show the links when the checkbox is checked */
+    }
+
+    /* Navbar links display vertically */
+    .navbar a {
+        text-align: left;
+        width: 100%;
+    }
+}
+
+/* Checkbox trick to toggle the menu */
+#hamburger-toggle {
+    display: none; /* Hide checkbox */
+}
+
+#hamburger-toggle:checked + .hamburger {
+    transform: rotate(90deg); /* Rotate hamburger on toggle */
+}
+
+/* Mobile Dropdown: Style the menu dropdown below the hamburger */
+#hamburger-toggle:checked + .hamburger + ul {
+    display: flex; /* Show the navigation links */
+    flex-direction: column; /* Arrange links vertically */
+    position: absolute;
+    top: 70px; /* Position dropdown below the navbar */
+    left: 0;
+    background-color: white;
+    width: 100%;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container2 {
+    display: flex;
+    width: 90vw;
+}
+
+.panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60vh; /* Reduced height */
+    border-radius: 50px;
+    color: #ffffff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: all 1s ease-in-out; /* Slower easing */
+    padding: 20px 0; /* Add padding to the top and bottom */
+}
+
+/* Text styling */
+.panel h1 {
+    color: white;
+    font-size: 30px; /* Slightly smaller text */
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0; /* Start with text hidden */
+    transition: opacity 0.5s ease-in-out; /* Slower fade-in for text */
+    background-color: rgba(87, 4, 50, 0.5); /* Semi-transparent black background */
+    padding: 10px; /* Add some space around the text */
+    border-radius: 15px; /* Rounded corners for the background */
+}
+
+
+/* Hover effect: expand and show text */
+.panel:hover {
+    flex: 1.5; /* Slightly larger expansion */
+}
+
+.panel:hover h1 {
+    opacity: 1;  /* Show the text when the panel is hovered */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+    .container2 {
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+        display: none; /* Hide panels 4 and 5 on small screens */
+    }
+}
+
+
+.contact-heading {
+    font-size: 100px; 
+    font-weight: bold;
+    color: white; 
+    text-align: center; 
+    width: 80%; 
+    margin: 0 auto; 
+    padding-bottom: 20px; 
+}
+
+
+.contact-form {
+    background-color: rgb(255, 182, 193);  /* Pink background color */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;  /* Centered form with margin from top */
+    width: 50%;  /* Adjust width as needed */
+    font-size: 20px;
+    text-align: left;  /* Align text to the left */
+    color: #B60D5C;  /* Dark pink font color */
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Inputs and Textarea */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #fff;  /* White border */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;  /* Adjust input text size */
+}
+
+/* Button Style */
+button {
+    background-color: rgb(182, 13, 92);  /* Pinkish red color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    display: inline-block;  /* Button is inline with form */
+    margin-top: 10px;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: rgb(255, 207, 229);  /* Lighter pink for hover */
+}
+
+/* For centering the form vertically and horizontally */
+#slide6 {
+    display: flex;
+    justify-content: center;  /* Centers the form horizontally */
+    align-items: flex-start;  /* Aligns content at the top */
+    min-height: 100vh;  /* Ensures the form takes up full height */
+    flex-direction: column;  /* Ensures content stacks vertically */
+}
+
+/* For small screens (responsive design) */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 80%;  /* Form takes up more space on smaller screens */
+    }
+
+    button {
+        font-size: 18px;  /* Smaller font for buttons on small screens */
+    }
+
+    .contact-heading {
+        width: 80%;  /* Ensure the heading width is the same as the form */
+    }
+}
+
+/* Container for both image and text */
+.content-container {
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Image container styling */
+.image-container {
+    width: 45%; /* Adjust width for more balanced layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Make image circular and add box-shadow */
+.image-container img {
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+/* Hover effect on the image */
+.image-container img:hover {
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+/* Text container styling */
+.text-container {
+    width: 45%; /* Reduced width to push the content closer to the middle */
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffb6c1, #ff1493); /* Gradient from light pink to dark pink */
+    border-radius: 10px; /* Border-radius on all four corners */
+    position: relative;
+    z-index: 1;
+}
+
+/* Styling for the paragraph */
+.text-container p {
+    font-size: 26px;
+    line-height: 1.8;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 100%; /* Make paragraph extend to the full width */
+    text-align: justify; /* Justify text to fill the container */
+    text-justify: inter-word; /* Better word spacing */
+    word-wrap: break-word; /* Avoid text overflow */
+}
+
+/* Heading styling */
+.text-container h2 {
+    font-size: 100px;
+    color: white;
+    text-align: left; /* Align "About Me" to the left */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Text shadow for readability */
+}
+
+/* Add padding to the content container */
+.text-container {
+    padding-right: 50px;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        height: auto;
+        background: linear-gradient(135deg, #ffb6c1, #ff1493); /* Retain gradient on mobile */
+    }
+
+    .image-container {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .text-container {
+        width: 80%;
+    }
+
+    .text-container p {
+        font-size: 20px;
+    }
+
+    .text-container h2 {
+        font-size: 60px;
+    }
+}
+
+/* Table styling */
+.resume-table {
+    width: 70%; 
+    margin: 40px auto; 
+    border-collapse: separate; 
+    background-color: #f9f9f9;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    padding-left: 0; 
+    padding-right: 0; 
+}
+
+/* Table Row Styling */
+.resume-table tr {
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    margin-bottom: 10px; 
+}
+
+/* Table Cell Styling */
+.resume-table td {
+    padding: 20px; 
+    vertical-align: top; 
+    color: #333; 
+    font-size: 1.4em;
+}
+
+/* Styling for the first column (headers) */
+.resume-table td:first-child {
+    background-color: #B60D5C; /* Pink background for the first column */
+    color: white; /* White text for the first column */
+    font-weight: bold; /* Make the header text bold */
+    border-radius: 10px 0 0 10px; /* Rounded corners only for the left side */
+    padding-left: 20px; /* Padding inside the left column */
+    padding-right: 20px; /* Padding inside the left column */
+    border-right: none; /* Remove any border on the right side */
+    margin-left: 0; /* Remove any left margin */
+}
+
+/* Styling for the second column (content) */
+.resume-table td:nth-child(2) {
+    background-color: transparent; /* No background color for the right side */
+    color: #333; /* Keep the text color normal for the second column */
+    border-radius: 0 10px 10px 0; /* Rounded corners only for the right side */
+    text-align: left; /* Align the content to the left */
+}
+
+/* Header text styling */
+.resume-table td strong {
+    color: white; /* White color for the headers */
+    font-size: 1.5em; /* Increase font size for better readability */
+}
+
+/* Remove bullets from list items */
+.resume-table ul {
+    padding-left: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    list-style: none; /* Remove bullet points */
+}
+
+/* Styling for list items */
+.resume-table ul li {
+    font-size: 1.4em; /* Increase font size of list items */
+    color: #333;
+    text-align: left; /* Ensure the list items are left-aligned */
+}
+
+/* Hover effect and animation */
+.resume-table:hover {
+    transform: translateY(-5px); /* Slightly lift the table */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Media Query for small devices */
+@media (max-width: 600px) {
+    .resume-table {
+        width: 90%; /* Increase width on smaller screens */
+        padding-left: 10px; /* Add smaller padding on smaller screens */
+        padding-right: 10px; /* Add smaller padding on smaller screens */
+    }
+
+    .resume-table td {
+        padding: 15px; /* Adjust padding for smaller screens */
+        font-size: 1.2em; /* Slightly smaller font on mobile */
+    }
+
+    .resume-table td strong {
+        font-size: 1.2em; /* Slightly smaller headers on mobile */
+    }
+}
+
+/* Ensuring the parent section uses Flexbox */
+.slides {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Profile Image Styling */
+.profile-image {
+    width: 300px;              /* Set width of the image */
+    height: 350px;             /* Set height of the image */
+    border-radius: 50%;        /* Make the image circular */
+    object-fit: cover;         /* Make sure the image covers the entire area */
+    margin-bottom: 30px;       /* Space below the image */
+    display: block;            /* Ensures the image is displayed as a block element */
+    border: 6px solid #fff;    /* White border around the image */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+/* Optionally, add a hover effect to enhance the border */
+.profile-image:hover {
+    border-color: #ff7eb9;  /* Change the border color on hover to a light pink */
+    transform: scale(1.05);  /* Slightly scale up the image */
+    transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+
+h2 {
+    font-size: 50px;            
+    color: white;               
+    margin: 10px 0;             
+    text-align: center;         
+}
+
+h1{
+    font-size: 36px;
+}
+
+.cta-button {
+    margin-top: 30px;
+    padding: 18px 40px;  /* Increased padding for a larger button */
+    background-color: #b50058;  /* Pinkish background */
+    color: white;
+    font-size: 1.3rem;  /* Larger font size */
+    border: none;
+    border-radius: 30px;  /* Rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for hover */
+}
+
+/* Button Hover Effect */
+.cta-button:hover {
+    background-color: #ffb1d7;  /* Light pink on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Add some space for mobile views */
+@media (max-width: 768px) {
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        font-size: 1.1rem;  /* Slightly larger font on smaller screens */
+        padding: 14px 35px;  /* Adjusted padding for mobile */
+    }
+}
+
+/* Remove bullet points and make links white */
+ul {
+    list-style-type: none;  /* Removes the default bullets */
+    padding: 0;  /* Removes default padding */
+}
+
+ul li {
+    font-size: 35px; /* Keeps the font size as 30px */
+    margin-bottom: 10px; /* Adds space between list items */
+}
+
+ul li a {
+    color: white;  /* Changes link color to white */
+    text-decoration: none; /* Removes underline from the link */
+}
+
+ul li a:hover {
+    text-decoration: underline; /* Adds underline on hover for interaction */
+}
+
+/* Styling for paragraph */
+p {
+    padding-top: 20px;
+    font-size: 40px;  /* Keeps the font size of the paragraph as 30px */
+    color: #ffffff; /* Adds a dark color to the paragraph text for readability */
+}
+
+/* Gallery container */
+.gallery {
+    display: flex; /* Use flexbox to arrange items horizontally */
+    gap: 16px;
+    padding: 20px;
+    max-width: 100%;
+    overflow-x: auto; /* Allow horizontal scrolling if the images overflow */
+  }
+  
+  /* Gallery item styling */
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 300px; /* Fixed width for each image item */
+    height: 400px; /* Fixed height for each image item */
+  }
+  
+  /* Initially, all images are blurred */
+  .gallery-item img {
+    width: 100%;  /* Ensure the image fills the container's width */
+    height: 100%; /* Ensure the image fills the container's height */
+    object-fit: cover; /* The image will cover the area, and excess will be cropped */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    filter: blur(5px); /* All images are blurred by default */
+  }
+  
+  /* Hover effect for the gallery items */
+  .gallery-item:hover {
+    transform: scale(1.05); /* Slight zoom effect when hovered */
+  }
+  
+  /* When an image is hovered, it becomes sharp */
+  .gallery-item:hover img {
+    filter: blur(0); /* Remove blur on hovered image */
+  }
+  
